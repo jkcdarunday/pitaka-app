@@ -14,21 +14,21 @@ class PitakaApp extends StatelessWidget {
       title: 'Pitaka',
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      home: MyHomePage(title: 'Pitaka'),
+      home: MainPage(title: 'Pitaka'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MainPage extends StatefulWidget {
+  MainPage({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MainPageState extends State<MainPage> {
   var accounts = [
     Account(id: 1, name: "total", value: 10000, total: true),
     Account(id: 2, name: "Security Bank", value: 100100),
