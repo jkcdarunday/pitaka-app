@@ -36,26 +36,126 @@ class _MainPageState extends State<MainPage> {
   ];
 
   List<Transaction> transactions = [
-    Transaction(id: 1, accountId: 2, description: "Buy rice", amount: -400, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 3, description: "Buy food", amount: -400, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 2, description: "Get salary", amount: 30000, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 3, description: "Buy fridge", amount: -40000, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 2, description: "Buy rice", amount: -400, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 2, description: "Buy food", amount: -400, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 2, description: "Get salary", amount: 30000, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 2, description: "Buy fridge", amount: -40000, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 2, description: "Buy rice", amount: -400, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 2, description: "Buy food", amount: -400, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 2, description: "Get salary", amount: 30000, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 2, description: "Buy fridge", amount: -40000, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 2, description: "Buy rice", amount: -400, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 3, description: "Buy food", amount: -400, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 3, description: "Get salary", amount: 30000, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 3, description: "Buy fridge", amount: -40000, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 3, description: "Buy rice", amount: -400, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 3, description: "Buy food", amount: -400, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 3, description: "Get salary", amount: 30000, timestamp: DateTime.now()),
-    Transaction(id: 1, accountId: 3, description: "Buy fridge", amount: -40000, timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 2,
+        description: "Buy rice",
+        amount: -400,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 3,
+        description: "Buy food",
+        amount: -400,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 2,
+        description: "Get salary",
+        amount: 30000,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 3,
+        description: "Buy fridge",
+        amount: -40000,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 2,
+        description: "Buy rice",
+        amount: -400,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 2,
+        description: "Buy food",
+        amount: -400,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 2,
+        description: "Get salary",
+        amount: 30000,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 2,
+        description: "Buy fridge",
+        amount: -40000,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 2,
+        description: "Buy rice",
+        amount: -400,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 2,
+        description: "Buy food",
+        amount: -400,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 2,
+        description: "Get salary",
+        amount: 30000,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 2,
+        description: "Buy fridge",
+        amount: -40000,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 2,
+        description: "Buy rice",
+        amount: -400,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 3,
+        description: "Buy food",
+        amount: -400,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 3,
+        description: "Get salary",
+        amount: 30000,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 3,
+        description: "Buy fridge",
+        amount: -40000,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 3,
+        description: "Buy rice",
+        amount: -400,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 3,
+        description: "Buy food",
+        amount: -400,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 3,
+        description: "Get salary",
+        amount: 30000,
+        timestamp: DateTime.now()),
+    Transaction(
+        id: 1,
+        accountId: 3,
+        description: "Buy fridge",
+        amount: -40000,
+        timestamp: DateTime.now()),
   ];
 
   List<Transaction> visibleTransactions = [];
@@ -97,10 +197,8 @@ class _MainPageState extends State<MainPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             AccountListWidget(accounts: accounts, onChange: onAccountChange),
-            Container(
-                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                child: Text("Transactions", style: TextStyle(fontSize: 16))),
-            TransactionListWidget(transactions: visibleTransactions)
+            Expanded(
+                child: TransactionListWidget(transactions: visibleTransactions))
           ],
         ),
       ),

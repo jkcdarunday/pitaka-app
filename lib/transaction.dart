@@ -28,7 +28,7 @@ class TransactionWidget extends StatelessWidget {
         transaction.amount < 0 ? Colors.redAccent : Colors.lightGreenAccent;
 
     return Card(
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+        margin: EdgeInsets.symmetric(vertical: 4),
         child: Container(
             constraints: BoxConstraints(minWidth: double.infinity),
             padding: const EdgeInsets.all(21.0),
@@ -41,6 +41,7 @@ class TransactionWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     Text(amountText, style: TextStyle(color: amountColor)),
+                    SizedBox(height: 10),
                     Text(
                         DateFormat(DateFormat.YEAR_MONTH_WEEKDAY_DAY)
                             .add_jm()
