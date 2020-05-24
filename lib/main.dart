@@ -91,16 +91,18 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Colors.transparent,
         textTheme: Theme.of(context).textTheme,
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          AccountListWidget(accounts: accounts, onChange: onAccountChange),
-          Container(
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-              child: Text("Transactions", style: TextStyle(fontSize: 16))),
-          TransactionListWidget(transactions: visibleTransactions)
-        ],
+      body: SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            AccountListWidget(accounts: accounts, onChange: onAccountChange),
+            Container(
+                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                child: Text("Transactions", style: TextStyle(fontSize: 16))),
+            TransactionListWidget(transactions: visibleTransactions)
+          ],
+        ),
       ),
     );
   }
