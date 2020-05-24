@@ -3,11 +3,17 @@ import 'package:intl/intl.dart';
 
 class Transaction {
   Transaction(
-      {this.id, this.accountId, this.description, this.amount, this.timestamp});
+      {this.id,
+      this.accountId,
+      this.description = '',
+      this.category = 'Others',
+      this.amount = 0,
+      this.timestamp});
 
   final int id;
   final int accountId;
   final String description;
+  final String category;
   final double amount;
   final DateTime timestamp;
 }
@@ -32,16 +38,22 @@ class TransactionWidget extends StatelessWidget {
         child: Container(
             constraints: BoxConstraints(minWidth: double.infinity),
             padding: const EdgeInsets.all(21.0),
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text("${transaction.description}"),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
+                    Text("${transaction.description}"),
                     Text(amountText, style: TextStyle(color: amountColor)),
-                    SizedBox(height: 10),
+                  ],
+                ),
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('${transaction.category}'),
                     Text(
                         DateFormat(DateFormat.YEAR_MONTH_WEEKDAY_DAY)
                             .add_jm()
